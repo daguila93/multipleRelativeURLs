@@ -1,7 +1,7 @@
 let urls = ['engenharia', 'sites2', 'engenharia.sites2']; //Não colocar protocolo
 
-let tags = ['a', 'img', 'source', 'video', 'link', 'script'];
-let attributes = ['href', 'src', 'srcset'];
+let tags = ['a', 'img', 'source', 'video', 'link', 'script', 'div'];
+let attributes = ['href', 'src', 'srcset', 'style'];
 
 tags.forEach(tag => document.querySelectorAll(tag).forEach(atributte => turnURLRelative(atributte, urls)));
 
