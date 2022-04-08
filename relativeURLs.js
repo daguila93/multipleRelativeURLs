@@ -1,4 +1,4 @@
-let urls = ['engenharia.uff.br/', 'sites2.uff.br/', 'engenharia.sites2.uff.br/']; //Não colocar protocolo
+let urls = ['engenharia', 'sites2', 'engenharia.sites2']; //Não colocar protocolo
 
 let tags = ['a', 'img', 'source', 'video', 'link', 'script'];
 let attributes = ['href', 'src', 'srcset'];
@@ -7,7 +7,7 @@ tags.forEach(tag => document.querySelectorAll(tag).forEach(atributte => turnURLR
 
 function turnURLRelative(node, urls) {
   urls.forEach(url => {
-    const regex = new RegExp('^https?://' + url)
+    const regex = new RegExp('^https?://' + url + '.uff.br/')
     attributes.forEach(attr => {
       if (node.hasAttribute(attr) && node[attr].match(regex)) {
         let url = new URL(node[attr]);
